@@ -13,7 +13,7 @@ public class App {
 
         Biblioteca miBiblio = new Biblioteca("Biblioteca Municipal");
 
-        System.out.println("Añadiendo Quijote: " + miBiblio.anadirPublicacion(libro1));
+        System.out.println("Añadiendo el Quijote: " + miBiblio.anadirPublicacion(libro1));
         System.out.println("Añadiendo Inventando inventos: " + miBiblio.anadirPublicacion(libro2));
         System.out.println("Añadiendo Britannica: " + miBiblio.anadirPublicacion(enciclo1));
 
