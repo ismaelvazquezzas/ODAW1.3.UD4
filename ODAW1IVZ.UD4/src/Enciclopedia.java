@@ -80,7 +80,7 @@ public class Enciclopedia extends Publicacion{
         return Objects.hash(super.hashCode(), numVol);
     }
 
-    //cambio
+
 
 }
 
