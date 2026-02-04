@@ -68,9 +68,6 @@ public class Enciclopedia extends Publicacion{
                 ", fecha de publicación " + getFechaPublicacion() +
                 " y volumenes: " + vols.toString());
     }
-
-
-
     @Override
     public boolean equals(Object o) {
         if (!super.equals(o)) return false;
@@ -82,5 +79,8 @@ public class Enciclopedia extends Publicacion{
     public int hashCode() {
         return Objects.hash(super.hashCode(), numVol);
     }
+
+    //cambio
+
 }
 
