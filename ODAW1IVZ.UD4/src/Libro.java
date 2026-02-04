@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Libro extends Publicacion {
 
@@ -63,5 +64,22 @@ public class Libro extends Publicacion {
                 ", publicado en " + getFechaPublicacion() +
                 ", con ISBN " + this.isbn +
                 " y número de páginas " + this.numPags);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " -> Libro{isbn= '" + isbn + "', paginas =" + numPags + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o)) return false;
+        Libro libro = (Libro) o;
+        return Objects.equals(isbn, libro.isbn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), isbn);
     }
 }

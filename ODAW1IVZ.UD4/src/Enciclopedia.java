@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Enciclopedia extends Publicacion{
 
@@ -48,6 +49,11 @@ public class Enciclopedia extends Publicacion{
     }
 
     @Override
+    public String toString() {
+        return super.toString() + " -> Enciclopedia{vols= " + numVol + "}";
+    }
+
+    @Override
     public void leer() {
         StringBuilder vols = new StringBuilder("[");
         for (int i = 1; i <= this.numVol; i++) {
@@ -61,6 +67,20 @@ public class Enciclopedia extends Publicacion{
         System.out.println("Estamos leyendo la enciclopedia: " + getTitulo() +
                 ", fecha de publicación " + getFechaPublicacion() +
                 " y volumenes: " + vols.toString());
+    }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (!super.equals(o)) return false;
+        Enciclopedia that = (Enciclopedia) o;
+        return numVol == that.numVol;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), numVol);
     }
 }
 

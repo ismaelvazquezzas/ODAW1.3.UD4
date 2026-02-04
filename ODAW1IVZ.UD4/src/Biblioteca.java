@@ -1,4 +1,6 @@
-public class Biblioteca {
+import java.util.Objects;
+
+public class Biblioteca implements Cloneable {
 
     protected String nombre;
     protected Publicacion[] coleccion;
@@ -69,9 +71,49 @@ public class Biblioteca {
     }
 
     public void leerPublicaciones() {
-        System.out.println("--- Catálogo de la Biblioteca " + this.nombre + " ---");
+        System.out.println("\n--- Catálogo de la Biblioteca " + this.nombre + " ---");
         for (int i = 0; i < this.contPublicacion; i++) {
             this.coleccion[i].leer();
         }
+    }
+
+    public Biblioteca copyOf() {
+        try {
+            Biblioteca copia = (Biblioteca) super.clone();
+
+            copia.coleccion = new Publicacion[20];
+
+            for (int i = 0; i < this.contPublicacion; i++) {
+                copia.coleccion[i] = (Publicacion) this.coleccion[i].clone();
+            }
+
+            copia.contPublicacion = this.contPublicacion;
+
+            return copia;
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Biblioteca{nombre= '" + nombre + "', cantidad= " + contPublicacion + "}";
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Biblioteca that = (Biblioteca) o;
+        return Objects.equals(nombre, that.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre);
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

@@ -1,6 +1,7 @@
 import java.time.LocalDate;
+import java.util.Objects;
 
-public class Publicacion {
+public class Publicacion implements Cloneable {
 
     protected String titulo;
     protected LocalDate fechaPublicacion;
@@ -38,7 +39,37 @@ public class Publicacion {
 
 
     public void leer() {
-        System.out.println("Estamos leyendo la publicación: " + this.titulo +
-                ", publicada en " + this.fechaPublicacion);
+        System.out.println("Estamos leyendo la publicación: " + this.titulo + ", publicada en " + this.fechaPublicacion);
+    }
+    @Override
+    public String toString() {
+        return "Publicación {titulo= '" + titulo + "', fecha= " + fechaPublicacion + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Publicacion that = (Publicacion) o;
+        return Objects.equals(titulo, that.titulo) &&
+                Objects.equals(editorial, that.editorial);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titulo, editorial);
+    }
+
+    @Override
+    public Object clone() {
+        try {
+            Publicacion clon = (Publicacion) super.clone();
+            if (this.editorial != null) {
+                clon.editorial = (Editorial) this.editorial.clone();
+            }
+            return clon;
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
     }
 }
