@@ -3,8 +3,8 @@ import java.util.Objects;
 
 public class Libro extends Publicacion {
 
-    protected String isbn;
-    protected int numPags;
+    private String isbn;
+    private int numPags;
 
     public Libro(String titulo, LocalDate fechaPublicacion, String isbn, int numPags, Editorial editorial){
         super(titulo, fechaPublicacion, editorial);

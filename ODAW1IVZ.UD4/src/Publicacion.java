@@ -3,9 +3,9 @@ import java.util.Objects;
 
 public class Publicacion implements Cloneable {
 
-    protected String titulo;
-    protected LocalDate fechaPublicacion;
-    protected Editorial editorial;
+    private String titulo;
+    private LocalDate fechaPublicacion;
+    private Editorial editorial;
 
     public Publicacion(String titulo, LocalDate fechaPublicacion, Editorial editorial){
         this.titulo = titulo;

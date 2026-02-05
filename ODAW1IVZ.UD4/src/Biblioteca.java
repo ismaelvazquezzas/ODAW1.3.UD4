@@ -2,9 +2,9 @@ import java.util.Objects;
 
 public class Biblioteca implements Cloneable {
 
-    protected String nombre;
-    protected Publicacion[] coleccion;
-    protected int contPublicacion;
+    private String nombre;
+    private Publicacion[] coleccion;
+    private int contPublicacion;
 
     public Biblioteca(String nombre){
         this.nombre = nombre;

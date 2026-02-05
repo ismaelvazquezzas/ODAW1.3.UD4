@@ -3,7 +3,7 @@ import java.util.Objects;
 
 public class Enciclopedia extends Publicacion{
 
-    protected int numVol;
+    private int numVol;
 
     public Enciclopedia(String titulo, LocalDate fechaPublicacion, int numVol, Editorial editorial){
         super(titulo, fechaPublicacion, editorial);

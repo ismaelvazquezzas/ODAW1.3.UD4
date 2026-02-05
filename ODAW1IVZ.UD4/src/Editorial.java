@@ -2,8 +2,8 @@ import java.util.Objects;
 
 public class Editorial implements Cloneable {
 
-    protected String nombre;
-    protected String cif;
+    private String nombre;
+    private String cif;
 
     public Editorial(String nombre, String cif){
         this.nombre = nombre;
