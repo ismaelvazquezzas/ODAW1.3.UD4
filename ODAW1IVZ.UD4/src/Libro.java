@@ -82,7 +82,4 @@ public class Libro extends Publicacion {
     public int hashCode() {
         return Objects.hash(super.hashCode(), isbn);
     }
-
-
-
 }
