@@ -79,8 +79,5 @@ public class Enciclopedia extends Publicacion{
     public int hashCode() {
         return Objects.hash(super.hashCode(), numVol);
     }
-
-
-
 }
 
