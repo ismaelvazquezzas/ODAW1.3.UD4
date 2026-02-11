@@ -68,7 +68,8 @@ public class Libro extends Publicacion {
 
     @Override
     public String toString() {
-        return super.toString() + " -> Libro{isbn= '" + isbn + "', paginas =" + numPags + "}";
+        return super.toString() + " -> Libro{isbn= '" + isbn +
+                "', paginas =" + numPags + "}";
     }
 
     @Override
@@ -83,3 +84,30 @@ public class Libro extends Publicacion {
         return Objects.hash(super.hashCode(), isbn);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
